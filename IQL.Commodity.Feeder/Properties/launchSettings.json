@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "IQL.Commodity.Feeder": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7204",
+      "environmentVariables": {
+        "BVG_Connection_PostGreSQL": ""
+      }
+    }
+  }
+}

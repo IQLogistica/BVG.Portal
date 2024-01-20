@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "IQL.Functions.BVG": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7119 --verbose",
+      "nativeDebugging": true
+    }
+  }
+}

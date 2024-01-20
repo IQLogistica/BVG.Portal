@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "appInsights2": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/microsoft.insights/components/bvg-prod-currency-feeder-af",
+      "type": "appInsights.azure",
+      "connectionId": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+      "dynamicId": null
+    },
+    "storage1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/bvg-prod-currency-feeder-af/providers/Microsoft.ServiceLinker/linkers/AzureWebJobsStorage_6DAE9C0857, /subscriptions/fd68ac2f-2a12-48cd-9883-b03bf143990d/resourceGroups/iql-production-bvg-rg/providers/Microsoft.Web/sites/bvg-prod-currency-feeder-af/providers/Microsoft.ServiceLinker/linkers/AzureWebJobsStorage_3BE051C1E6",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/stproductionbvg001",
+      "type": "storage.azure",
+      "connectionId": "AzureWebJobsStorage",
+      "dynamicId": null
+    }
+  }
+}

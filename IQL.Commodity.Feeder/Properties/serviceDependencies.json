@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "storage1": {
+      "type": "storage",
+      "connectionId": "AzureWebJobsStorage"
+    },
+    "appInsights1": {
+      "type": "appInsights",
+      "connectionId": "APPLICATIONINSIGHTS_CONNECTION_STRING"
+    },
+    "appInsights2": {
+      "type": "appInsights",
+      "connectionId": "APPLICATIONINSIGHTS_CONNECTION_STRING",
+      "dynamicId": null
+    },
+    "ConnectionStrings": {
+      "BVG_Connection_PostGreSQL": "Server=iql-dev-universal.postgres.database.azure.com;Database=iql-bvg-db;Port=5432;User Id=IQLDevUniAdmin;Password=4pC3eFmY;"
+    }
+  }
+}
