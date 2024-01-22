@@ -1,6 +1,7 @@
 ﻿using CoreLogic.Contracts;
 using CoreLogic.Services.Commands;
 using CoreLogic.Services.Handlers;
+using CoreLogic.Transform;
 using Infrastructure.Database.BVG;
 using Infrastructure.Repository;
 using MediatR;
@@ -33,6 +34,7 @@ public class Startup : FunctionsStartup
 
         builder.Services.AddScoped<IRequestHandler<CommodityPriceFeedCommand, Task>, CommodityHandler>();
         builder.Services.AddScoped<ICommodityHistoryRepository, CommodityHistoryRepository>();
+        builder.Services.AddScoped<IDateTransform, DateTransform>();
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
     }
 }

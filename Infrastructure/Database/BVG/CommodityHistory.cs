@@ -15,6 +15,7 @@ namespace Infrastructure.Database.BVG
         public decimal? Volume { get; set; }
         public DateTime? LastUpdated { get; set; }
         public DateTime? CreatedDate { get; set; }
+        public DateOnly ContractDate {  get; set; }
 
         public virtual Commodity? Commodity { get; set; }
         public virtual Currency? Currency { get; set; }

@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IQL.Currency.Feeder", "IQL.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{2069BE8F-75BB-46F0-9601-B76797F71B99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IQL.Commodity.Feeder", "IQL.Commodity.Feeder\IQL.Commodity.Feeder.csproj", "{EC9BDD8D-E478-4324-AA37-F19A3653A304}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IQL.Commodity.Feeder", "IQL.Commodity.Feeder\IQL.Commodity.Feeder.csproj", "{EC9BDD8D-E478-4324-AA37-F19A3653A304}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{A960304C-1D73-4124-A827-6DDE53C512B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{EC9BDD8D-E478-4324-AA37-F19A3653A304}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC9BDD8D-E478-4324-AA37-F19A3653A304}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC9BDD8D-E478-4324-AA37-F19A3653A304}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A960304C-1D73-4124-A827-6DDE53C512B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A960304C-1D73-4124-A827-6DDE53C512B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A960304C-1D73-4124-A827-6DDE53C512B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A960304C-1D73-4124-A827-6DDE53C512B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

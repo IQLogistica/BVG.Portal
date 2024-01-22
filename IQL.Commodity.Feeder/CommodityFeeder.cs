@@ -11,16 +11,19 @@ using CoreLogic.Models;
 using CoreLogic.Services.Commands;
 using MediatR;
 using System.Web.Http;
+using CoreLogic.Contracts;
 
 namespace IQL.Commodity.Feeder;
 
 public class CommodityFeeder
 {
     private readonly IMediator Mediator;
+    private readonly IDateTransform _dateTransform;
 
-    public CommodityFeeder(IMediator mediator)
+    public CommodityFeeder(IMediator mediator, IDateTransform dateTransform)
     {
         Mediator = mediator;
+        _dateTransform = dateTransform;
     }
 
     [FunctionName("CommodityFeeder")]
@@ -36,7 +39,7 @@ public class CommodityFeeder
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data = JsonConvert.DeserializeObject<Commodities>(requestBody);
 
-            var command = new CommodityPriceFeedCommand(data);
+            var command = new CommodityPriceFeedCommand(data, _dateTransform);
             await Mediator.Send(command);
 
         }

@@ -25,4 +25,6 @@ public class CommodityData
     public string ContractSortOrder { get; set; }
     public DateTime CreatedDate { get; set; }
     public DateTime LastUpdated { get; set; }
+    public DateOnly ContractDate { get; set; }
+
 }
