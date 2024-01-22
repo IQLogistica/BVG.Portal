@@ -21,9 +21,14 @@ public class DateTransform : IDateTransform
 
         if (monthValuePairs.TryGetValue(month, out int monthValue))
         {
-            // Assuming year is provided in two digits, adjust logic if it's in four digits
-            var currentYear = DateTime.Now.Year % 100; // Last two digits of the current year
-            var yearValue = int.Parse(year) + (int.Parse(year) <= currentYear ? 2000 : 1900);
+            var currentYearLastTwoDigits = DateTime.Now.Year % 100;
+            var inputYear = int.Parse(year);
+            int centuryPrefix;
+
+            if (inputYear <= currentYearLastTwoDigits + 50) centuryPrefix = DateTime.Now.Year / 100; // Current century
+            else centuryPrefix = DateTime.Now.Year / 100 - 1; // Previous century
+
+            var yearValue = centuryPrefix * 100 + inputYear;
 
             var date = new DateOnly(yearValue, monthValue, 1);
             return Task.FromResult(date);

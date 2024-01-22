@@ -36,12 +36,19 @@ namespace Tests
         public async Task MonthYearToDate1st_EdgeCaseYear_ReturnsCorrectDate()
         {
             var currentYearLastTwoDigits = DateTime.Now.Year % 100;
-            var testYear = currentYearLastTwoDigits < 50 ? currentYearLastTwoDigits + 50 : currentYearLastTwoDigits - 50;
+            var testYear = currentYearLastTwoDigits < 10 ? currentYearLastTwoDigits + 10 : currentYearLastTwoDigits - 10;
             var yearString = testYear.ToString("00");
 
             var result = await _dateTransform.MonthYearToDate1st($"JAN{yearString}");
             var expectedYear = testYear + (testYear <= currentYearLastTwoDigits ? 2000 : 1900);
             Assert.AreEqual(new DateOnly(expectedYear, 1, 1), result);
+        }
+
+        [TestCase("JUL25")]
+        public async Task MonthYearToDate1st_ValidYear_ReturnsCorrectDate(string input)
+        {
+            var result = await _dateTransform.MonthYearToDate1st(input);
+            Assert.That(result, Is.EqualTo(new DateOnly(2025, 07, 1)));
         }
     }
 }

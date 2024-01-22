@@ -26,7 +26,8 @@ public class CommodityMappingProfile : Profile
                     LastUpdated = commodityData.LastUpdated.AddHours(-2),
                     CreatedDate = DateTime.Now,
                     CommodityId = FindId(commodityData, commodities),
-                    CurrencyId = FindId(commodityData, ctx.Items["Currencies"])
+                    CurrencyId = FindId(commodityData, ctx.Items["Currencies"]),
+                    ContractDate = commodityData.ContractDate,
                 };
                 result.Add(history);
             }
