@@ -1,13 +1,13 @@
-name: Build and deploy .NET Core application to Function App bvg-prod-commidity-feeder-af
+name: Build and deploy .NET Core application to Function App func-bvg-commidity-feeder-prod
 on:
   push:
     branches:
     - main
 env:
-  AZURE_FUNCTIONAPP_NAME: bvg-prod-commidity-feeder-af
+  AZURE_FUNCTIONAPP_NAME: func-bvg-commidity-feeder-prod
   AZURE_FUNCTIONAPP_PACKAGE_PATH: IQL.Commodity.Feeder/published
   CONFIGURATION: Release
-  DOTNET_CORE_VERSION: 8.0.x
+  DOTNET_CORE_VERSION: 6.0.x
   WORKING_DIRECTORY: IQL.Commodity.Feeder
 jobs:
   build:
@@ -42,5 +42,5 @@ jobs:
       uses: Azure/functions-action@v1
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-        publish-profile: ${{ secrets.bvg_prod_commidity_feeder_af_4E8D }}
+        publish-profile: ${{ secrets.func_bvg_commidity_feeder_prod_B441 }}
         package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
